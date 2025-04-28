@@ -1,11 +1,11 @@
+import "../styles/searchbar.css";
 
-function Searchbar() {
+const Searchbar = () => {
     return (
         <div className="searchbar">
             <input type="text" placeholder="Search..." />
-            <button>Search</button>
+            <button>S</button>
         </div>
     );
-}
-
+};
 export default Searchbar;

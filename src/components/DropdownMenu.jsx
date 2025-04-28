@@ -1,9 +1,11 @@
-import DishType from './Dropdowns/DishType';
-import Time from './Dropdowns/Time';
-import Ingredients from './Dropdowns/Ingredients';
-import CreatedBy from './Dropdowns/CreatedBy';
+import DishType from "./Dropdowns/DishType.jsx";
+import Time from "./Dropdowns/Time.jsx";
+import Ingredients from "./Dropdowns/Ingredients.jsx";
+import CreatedBy from "./Dropdowns/CreatedBy.jsx";
 
-function DropdownMenu() {
+import "../styles/dropdownMenu.css";
+
+const DropdownMenu = () => {
     return (
         <div className="dropdown-menu">
             <DishType/>
@@ -11,7 +13,6 @@ function DropdownMenu() {
             <Ingredients/>
             <CreatedBy/>
         </div>
-    )
-}
-
+    );
+};
 export default DropdownMenu;

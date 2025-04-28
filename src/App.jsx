@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import './App.css'
-import Navbar from './components/Navbar'
-import Searchbar from './components/Searchbar'
-import DropdownMenu from './components/DropdownMenu'
+import { useState } from "react";
+import './App.css';
+import Navbar from "./components/Navbar";
+import Searchbar from "./components/Searchbar";
+import DropdownMenu from "./components/DropdownMenu";
 
-function App() {
+const App = () => {
   const [count, setCount] = useState(0)
 
   return (
@@ -13,7 +13,7 @@ function App() {
       <Searchbar/>
       <DropdownMenu/>
     </>
-  )
-}
+  );
+};
 
 export default App

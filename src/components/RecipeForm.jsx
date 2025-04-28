@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CreatetableSelect from 'react-select/creatable';
 
-function RecipeForm() {
+const RecipeForm = () => {
     
     const [tags, setTags] = useState([]);
 
@@ -31,5 +31,6 @@ function RecipeForm() {
                 <button type="submit">Post</button>
             </form>
         </div>
-    )
-}
+    );
+};
+export default RecipeForm;

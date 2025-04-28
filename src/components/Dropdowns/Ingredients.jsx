@@ -1,12 +1,15 @@
+import { useState } from "react";
 
-function Ingredients() {
+const Ingredients = () => {
     const [isOpen, setIsOpen] = useState(false);
-    
-        const toggleDropdown = () => setIsOpen(!isOpen);
-    
-        return (
-            <div className="dropdown" onClick={toggleDropdown}>
-            <h1>Ingredients</h1>
+    const toggleDropdown = () => setIsOpen(!isOpen);
+
+    return (
+        <div className="dropdown">
+            <div className="dropdown-header" onClick={toggleDropdown}>
+                <h1>Ingredients</h1>
+                <span className={`arrow ${!isOpen ? 'open' : ''}`}>▼</span>
+            </div>
             {isOpen && (
                 <div>
                     <ul>
@@ -18,9 +21,10 @@ function Ingredients() {
                         <li>Vegetables</li>
                         <li>Rice</li>
                     </ul>
-                </div>)}
-            </div>
-        )
-}
+                </div>
+            )}
+        </div>
+    );
+};
 
 export default Ingredients;

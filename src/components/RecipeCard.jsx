@@ -1,5 +1,5 @@
 
-function RecipeCard() {
+const RecipeCard = () => {
     return (
         <div className="recipe-card">
             <div className="recipe-image">
@@ -10,7 +10,6 @@ function RecipeCard() {
                 <p>{description}</p>
             </div>
         </div>
-    )
-}
-
+    );
+};
 export default RecipeCard;
