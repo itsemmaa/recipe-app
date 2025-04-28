@@ -1,12 +1,15 @@
+import { useState } from "react";
 
-function CreatedBy() {
+const CreatedBy = () => {
     const [isOpen, setIsOpen] = useState(false);
-    
-        const toggleDropdown = () => setIsOpen(!isOpen);
-    
-        return (
-            <div className="dropdown" onClick={toggleDropdown}>
-            <h1>Created By</h1>
+    const toggleDropdown = () => setIsOpen(!isOpen);
+
+    return (
+        <div className="dropdown">
+            <div className="dropdown-header" onClick={toggleDropdown}>
+                <h1>Created By</h1>
+                <span className={`arrow ${!isOpen ? 'open' : ''}`}>▼</span>
+            </div>
             {isOpen && (
                 <div>
                     <ul>
@@ -15,9 +18,10 @@ function CreatedBy() {
                         <li>Stephanie</li>
                         <li>Craig</li>
                     </ul>
-                </div>)}
-            </div>
-        )
-}
+                </div>
+            )}
+        </div>
+    );
+};
 
 export default CreatedBy;

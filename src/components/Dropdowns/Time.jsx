@@ -1,27 +1,27 @@
+import { useState } from "react";
 
-function Time() {
+const Time = () => {
     const [isOpen, setIsOpen] = useState(false);
-    
-        const toggleDropdown = () => setIsOpen(!isOpen);
-    
-        return (
-            <div className="dropdown" onClick={toggleDropdown}>
-            <h1>Time</h1>
+    const toggleDropdown = () => setIsOpen(!isOpen);
+
+    return (
+        <div className="dropdown">
+            <div className="dropdown-header" onClick={toggleDropdown}>
+                <h1>Time</h1>
+                <span className={`arrow ${!isOpen ? 'open' : ''}`}>▼</span>
+            </div>
             {isOpen && (
                 <div>
                     <ul>
-                        <li>Soup</li>
-                        <li>Appetizer</li>
-                        <li>Main</li>
-                        <li>Breakfast</li>
-                        <li>Lunch</li>
-                        <li>Dinner</li>
-                        <li>Drinks</li>
-                        <li>Dessert</li>
+                        <li>Under 15 min</li>
+                        <li>Under 30 min</li>
+                        <li>Under 1 hour</li>
+                        <li>Over 1 hour</li>
                     </ul>
-                </div>)}
-            </div>
-        )
-}
+                </div>
+            )}
+        </div>
+    );
+};
 
 export default Time;

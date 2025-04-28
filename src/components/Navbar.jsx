@@ -1,17 +1,20 @@
+import "../styles/navbar.css";
 
-function Navbar() {
+
+const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-header">
-        <a href="/">RECIPEAS</a>
+        <h1>RECIPEAS</h1>
       </div>
-      <ul className="navbar-menu">
-        <li><a href="/">Search</a></li>
-        <li><a href="/about">View Saved</a></li>
-        <li><a href="/contact">Create a Dish</a></li>
-      </ul>
+      <div className="navbar-menu">
+        <ul>
+          <li><a href="/">Search</a></li>
+          <li><a href="/about">View Saved</a></li>
+          <li><a href="/contact">Add a Dish</a></li>
+        </ul>
+      </div>
     </nav>
   );
-}
-
+};
 export default Navbar;
