@@ -1,7 +1,6 @@
 import "../styles/navbar.css";
 
-
-const Navbar = () => {
+const Navbar = ({ currentPage, setCurrentPage }) => {
   return (
     <nav className="navbar">
       <div className="navbar-header">
@@ -9,12 +8,34 @@ const Navbar = () => {
       </div>
       <div className="navbar-menu">
         <ul>
-          <li><a href="/">Search</a></li>
-          <li><a href="/about">View Saved</a></li>
-          <li><a href="/contact">Add a Dish</a></li>
+          <li>
+            <button 
+              onClick={() => setCurrentPage("search")} 
+              className={currentPage === "search" ? "active" : ""}
+            >
+              Search
+            </button>
+          </li>
+          <li>
+            <button 
+              onClick={() => setCurrentPage("savedPage")} 
+              className={currentPage === "savedPage" ? "active" : ""}
+            >
+              View Saved
+            </button>
+          </li>
+          <li>
+            <button 
+              onClick={() => setCurrentPage("addPage")} 
+              className={currentPage === "addPage" ? "active" : ""}
+            >
+              Add a Dish
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
   );
 };
+
 export default Navbar;
