@@ -1,9 +1,13 @@
 import "../styles/searchbar.css";
 
-const Searchbar = () => {
+const Searchbar = ({ setSearchQuery }) => {
+    const handleInputChange = (event) => {
+        setSearchQuery(event.target.value);
+    };
+
     return (
         <div className="searchbar">
-            <input type="text" placeholder="Search..." />
+            <input type="text" placeholder="Search..." onChange={handleInputChange} />
             <button>S</button>
         </div>
     );

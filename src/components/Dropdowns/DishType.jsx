@@ -1,8 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { RecipeContext } from "../../context/RecipeContext";
 
 const DishType = () => {
+    const { updateFilter } = useContext(RecipeContext);
     const [isOpen, setIsOpen] = useState(false);
     const toggleDropdown = () => setIsOpen(!isOpen);
+
+    const handleSelect = (value) => {
+        updateFilter("dishType", value);
+        setIsOpen(false);
+    };
 
     return (
         <div className="dropdown">
@@ -13,15 +20,17 @@ const DishType = () => {
             {isOpen && (
                 <div>
                     <ul>
-                        <li>Soup</li>
-                        <li>Appetizer</li>
-                        <li>Main</li>
-                        <li>Breakfast</li>
-                        <li>Lunch</li>
-                        <li>Dinner</li>
-                        <li>Drinks</li>
-                        <li>Dessert</li>
+                        <li onClick={() => handleSelect("")}>All</li>
+                        <li onClick={() => handleSelect("Soup")}>Soup</li>
+                        <li onClick={() => handleSelect("Appetizer")}>Appetizer</li>
+                        <li onClick={() => handleSelect("Main")}>Main</li>
+                        <li onClick={() => handleSelect("Breakfast")}>Breakfast</li>
+                        <li onClick={() => handleSelect("Lunch")}>Lunch</li>
+                        <li onClick={() => handleSelect("Dinner")}>Dinner</li>
+                        <li onClick={() => handleSelect("Drinks")}>Drinks</li>
+                        <li onClick={() => handleSelect("Dessert")}>Dessert</li>
                     </ul>
+                    <button onClick={() => handleSelect("")} className="clear-button">Clear</button>
                 </div>
             )}
         </div>
