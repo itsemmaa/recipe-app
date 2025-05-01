@@ -2,6 +2,10 @@ import React, { createContext, useState, useMemo } from 'react';
 import spaghettiImage from "../assets/spaghetti-bolognese-10.jpg"; // Import local image
 import chickenCurryImage from "../assets/Andhra-Chicken-Curry-2-3.jpg"; // Import local image
 import caesarSaladImage from "../assets/caesar-salad.jpg"; // Import local image
+import lasagnaImage from "../assets/lasagna.jpg"; // Import local image
+import enchiladasImage from "../assets/enchilada.jpg"; // Import local image
+import cakeImage from "../assets/cake.jpg"; // Import local image
+
 
 export const RecipeContext = createContext(); // Ensure this is exported
 
@@ -12,7 +16,7 @@ export const RecipeProvider = ({ children }) => {
             description: "A classic Italian pasta dish with rich meat sauce.",
             image: spaghettiImage, // Use imported image
             time: 45,
-            ingredients: ["Spaghetti", "Ground Beef", "Tomato Sauce", "Onion", "Garlic"],
+            ingredients: ["Spaghetti", "Ground Beef", "Tomato Sauce", "Onion", "Garlic", "Meat", "Pasta"],
             author: "Chef Mario",
             dishType: "Lunch",
         },
@@ -21,7 +25,7 @@ export const RecipeProvider = ({ children }) => {
             description: "A flavorful and spicy chicken curry.",
             image: chickenCurryImage, // Use imported image
             time: 60,
-            ingredients: ["Chicken", "Curry Powder", "Coconut Milk", "Onion", "Garlic", "Ginger"],
+            ingredients: ["Chicken", "Curry Powder", "Coconut Milk", "Onion", "Garlic", "Ginger", "Meat"],
             author: "Chef Priya",
             dishType: "Dinner",
         },
@@ -30,9 +34,36 @@ export const RecipeProvider = ({ children }) => {
             description: "A fresh and healthy Caesar salad.",
             image: caesarSaladImage, // Use imported image
             time: 15,
-            ingredients: ["Romaine Lettuce", "Croutons", "Parmesan Cheese", "Caesar Dressing"],
+            ingredients: ["Romaine Lettuce", "Croutons", "Cheese", "Caesar Dressing"],
             author: "Chef Julia",
             dishType: "Appetizer",
+        },
+        {
+            name: "Lasagna",
+            description: "A simple and classic italian dish.",
+            image: lasagnaImage, // Use imported image
+            time: 90,
+            ingredients: ["Pasta", "Cheese", "Onion", "Meat", "Tomato Sauce"],
+            author: "John Smith",
+            dishType: "Dinner",
+        },
+        {
+            name: "Chicken Enchiladas",
+            description: "The best mexican dish ever!",
+            image: enchiladasImage, // Use imported image
+            time: 45,
+            ingredients: ["Chicken", "Tortillas", "Cheese", "Meat"],
+            author: "John Jacob Jingleheimer Schmidt",
+            dishType: "Dinner",
+        },
+        {
+            name: "Chocolate Cake",
+            description: "Perfect for a birthday dessert.",
+            image: cakeImage, // Use imported image
+            time: 60,
+            ingredients: ["Flour", "Eggs", "Cocoa Powder", "Sugar"],
+            author: "John Smith",
+            dishType: "Dessert",
         },
     ]);
     const [filters, setFilters] = useState({ dishType: "", time: "", ingredients: "", createdBy: "", searchQuery: "" });

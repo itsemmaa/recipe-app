@@ -25,6 +25,7 @@ const DropdownMenu = () => {
             <CreatedBy />
             <button onClick={clearAllFilters} className="clear-button">Clear All</button>
         </div>
+
     );
 };
 

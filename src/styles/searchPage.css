@@ -1,0 +1,46 @@
+.search-page {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height:100%;
+}
+
+/* Top search bar */
+.searchbar-container {
+    width:100%;
+    padding: 1rem;
+}
+
+/* Main area: sidebar and search results */
+.search-page-main-container {
+    display: flex;
+    flex: 1;
+    width:100%;
+    gap: 1rem;
+}
+
+/* Sidebar container */
+.dropdown-menu-container {
+    display: flex;
+    flex: 0 1 20%;
+    min-width: 150px;
+    max-width: 300px;
+    height:100%;
+}
+
+/* Recipe results */
+.search-results-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Each recipe card wrapper */
+.search-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 220px);
+    gap: 2rem;
+    width: 80%;
+    height: 100%;    
+}
