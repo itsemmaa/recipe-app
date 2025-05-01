@@ -15,6 +15,7 @@
     "@fontsource/crimson-text": "^5.2.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.5.3",
     "react-select": "^5.10.1"
   },
   "devDependencies": {
