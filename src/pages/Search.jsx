@@ -37,6 +37,8 @@ const Search = () => {
                 ingredients={recipes.find((recipe) => recipe.name === expandedCard).ingredients}
                 time={recipes.find((recipe) => recipe.name === expandedCard).time}
                 author={recipes.find((recipe) => recipe.name === expandedCard).author}
+                steps={recipes.find((recipe) => recipe.name === expandedCard).steps}
+
                 isExpanded={true}
                 toggleExpanded={() => toggleExpandedCard(null)}
               />
@@ -52,6 +54,7 @@ const Search = () => {
                     ingredients={recipe.ingredients}
                     time={recipe.time}
                     author={recipe.author}
+                    steps={recipe.steps}
                     isExpanded={false}
                     toggleExpanded={() => toggleExpandedCard(recipe.name)}
                 />

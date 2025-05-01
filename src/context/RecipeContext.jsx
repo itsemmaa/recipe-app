@@ -19,6 +19,13 @@ export const RecipeProvider = ({ children }) => {
             ingredients: ["Spaghetti", "Ground Beef", "Tomato Sauce", "Onion", "Garlic", "Meat", "Pasta"], // Ensure ingredients are defined
             author: "Chef Mario", // Ensure author is defined
             dishType: "Lunch",
+            steps: [
+                "Cook spaghetti according to package instructions.",
+                "Brown ground beef in a pan.",
+                "Add tomato sauce, onion, and garlic to the pan.",
+                "Simmer for 20 minutes.",
+                "Serve spaghetti with the meat sauce.",
+            ],
         },
         {
             name: "Chicken Curry",
@@ -28,6 +35,13 @@ export const RecipeProvider = ({ children }) => {
             ingredients: ["Chicken", "Curry Powder", "Coconut Milk", "Onion", "Garlic", "Ginger", "Meat"],
             author: "Chef Priya",
             dishType: "Dinner",
+            steps: [
+                "Cook chicken until fully cooked.",
+                "Mix curry powder, coconut milk, onion, garlic, and ginger in a pan.",
+                "Add cooked chicken to the pan.",
+                "Simmer for 15 minutes.",
+                "Serve with rice.",
+            ],
         },
         {
             name: "Caesar Salad",
@@ -37,6 +51,11 @@ export const RecipeProvider = ({ children }) => {
             ingredients: ["Romaine Lettuce", "Croutons", "Cheese", "Caesar Dressing"],
             author: "Chef Julia",
             dishType: "Appetizer",
+            steps: [
+                "Wash and chop romaine lettuce.",
+                "Mix croutons, cheese, and Caesar dressing.",
+                "Serve lettuce with the dressing mixture.",
+            ],
         },
         {
             name: "Lasagna",
@@ -46,6 +65,13 @@ export const RecipeProvider = ({ children }) => {
             ingredients: ["Pasta", "Cheese", "Onion", "Meat", "Tomato Sauce"],
             author: "John Smith",
             dishType: "Dinner",
+            steps: [
+                "Cook pasta according to package instructions.",
+                "Mix cheese, onion, meat, and tomato sauce.",
+                "Layer pasta, cheese mixture, and tomato sauce in a pan.",
+                "Bake for 30 minutes.",
+                "Serve hot.",
+            ],
         },
         {
             name: "Chicken Enchiladas",
@@ -55,6 +81,12 @@ export const RecipeProvider = ({ children }) => {
             ingredients: ["Chicken", "Tortillas", "Cheese", "Meat"],
             author: "John Jacob Jingleheimer Schmidt",
             dishType: "Dinner",
+            steps: [
+                "Cook chicken until fully cooked.",
+                "Wrap tortillas around chicken and cheese.",
+                "Bake for 20 minutes.",
+                "Serve hot.",
+            ],
         },
         {
             name: "Chocolate Cake",
@@ -64,6 +96,12 @@ export const RecipeProvider = ({ children }) => {
             ingredients: ["Flour", "Eggs", "Cocoa Powder", "Sugar"],
             author: "John Smith",
             dishType: "Dessert",
+            steps: [
+                "Mix flour, eggs, cocoa powder, and sugar.",
+                "Pour mixture into a pan.",
+                "Bake for 30 minutes.",
+                "Serve with whipped cream.",
+            ],
         },
     ]);
     const [filters, setFilters] = useState({ dishType: "", time: "", ingredients: "", createdBy: "", searchQuery: "" });

@@ -24,6 +24,7 @@ const SavedPage = () => {
               ingredients={savedRecipes.find((recipe) => recipe.name === expandedCard).ingredients}
               time={savedRecipes.find((recipe) => recipe.name === expandedCard).time}
               author={savedRecipes.find((recipe) => recipe.name === expandedCard).author}
+              steps={savedRecipes.find((recipe) => recipe.name === expandedCard).steps}
               isExpanded={true}
               toggleExpanded={() => toggleExpandedCard(null)}
             />
@@ -40,6 +41,7 @@ const SavedPage = () => {
                   ingredients={recipe.ingredients}
                   time={recipe.time}
                   author={recipe.author}
+                  steps={recipe.steps}
                   isExpanded={false}
                   toggleExpanded={() => toggleExpandedCard(recipe.name)}
                 />

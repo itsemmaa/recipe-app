@@ -2,7 +2,7 @@ import "../styles/recipeCard.css";
 import { useContext } from "react";
 import { RecipeContext } from "../context/RecipeContext";
 
-const RecipeCard = ({ image, name, description, ingredients, time, author, isExpanded, toggleExpanded }) => {
+const RecipeCard = ({ image, name, description, ingredients, time, author, steps, isExpanded, toggleExpanded }) => {
     const { toggleSaveRecipe, savedRecipes } = useContext(RecipeContext);
     const isSaved = savedRecipes.some((recipe) => recipe.name === name);
 
@@ -10,7 +10,12 @@ const RecipeCard = ({ image, name, description, ingredients, time, author, isExp
         `Time: ${time} minutes`,
         `Author: ${author}`,
         `Ingredients: ${ingredients.join(", ")}`,
-    ];
+        <div key="steps">
+            Steps:
+            {steps.map((step, index) => (
+                <div key={index}>{step}</div>
+            ))}
+        </div>    ];
 
     return (
         <div 
@@ -30,7 +35,7 @@ const RecipeCard = ({ image, name, description, ingredients, time, author, isExp
                 <button 
                     onClick={(e) => {
                         e.stopPropagation();
-                        toggleSaveRecipe({ image, name, description, ingredients, time, author });
+                        toggleSaveRecipe({ image, name, description, ingredients, time, author, steps });
                     }} 
                     style={{
                         padding: '5px 10px',
