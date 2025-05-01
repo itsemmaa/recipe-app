@@ -24,7 +24,10 @@ const Ingredients = () => {
                         <li onClick={() => handleSelect("Chicken")}>Chicken</li>
                         <li onClick={() => handleSelect("Tomato Sauce")}>Tomato Sauce</li>
                         <li onClick={() => handleSelect("Garlic")}>Garlic</li>
-                        <li onClick={() => handleSelect("Parmesan Cheese")}>Parmesan Cheese</li>
+                        <li onClick={() => handleSelect("Onion")}>Onion</li>
+                        <li onClick={() => handleSelect("Cheese")}>Cheese</li>
+                        <li onClick={() => handleSelect("Meat")}>Meat</li>
+                        <li onClick={() => handleSelect("Pasta")}>Pasta</li>
                     </ul>
                     <button onClick={() => handleSelect("")} className="clear-button">Clear</button>
                 </div>
