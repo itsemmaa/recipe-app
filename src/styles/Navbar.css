@@ -40,7 +40,7 @@
     text-align: center;
 }
 
-.navbar ul li button {
+.navbar ul li a {
     background: none;
     border: none;
     font-size: 1.2em;
@@ -51,17 +51,17 @@
     transition: color 0.3s, border-bottom 0.3s;
 }
 
-.navbar ul li button:hover {
+.navbar ul li a:hover {
     color: #666;
     border-bottom: 2px solid #666;
 }
 
-.navbar ul li button:focus {
+.navbar ul li a:focus {
     outline: none;
     color: #333;
 }
 
-.navbar ul li button.active {
+.navbar ul li a.active {
     color: black;
     border-bottom: 2px solid black;
 }

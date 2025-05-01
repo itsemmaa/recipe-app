@@ -1,6 +1,7 @@
 import "../styles/navbar.css";
+import { Link } from "react-router-dom";
 
-const Navbar = ({ currentPage, setCurrentPage }) => {
+const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-header">
@@ -9,28 +10,19 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
       <div className="navbar-menu">
         <ul>
           <li>
-            <button 
-              onClick={() => setCurrentPage("search")} 
-              className={currentPage === "search" ? "active" : ""}
-            >
-              Search
-            </button>
+            <Link to="/" 
+              className={({ isActive }) => isActive ? "active" : ""}
+            >Search</Link>
           </li>
           <li>
-            <button 
-              onClick={() => setCurrentPage("savedPage")} 
-              className={currentPage === "savedPage" ? "active" : ""}
-            >
-              View Saved
-            </button>
+          <Link to="/saved" 
+              className={({ isActive }) => isActive ? "active" : ""}
+            >View Saved</Link>
           </li>
           <li>
-            <button 
-              onClick={() => setCurrentPage("addPage")} 
-              className={currentPage === "addPage" ? "active" : ""}
-            >
-              Add a Dish
-            </button>
+          <Link to="/add" 
+              className={({ isActive }) => isActive ? "active" : ""}
+            >Add a Dish</Link>
           </li>
         </ul>
       </div>
