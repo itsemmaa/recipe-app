@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import RecipeCard from "../components/RecipeCard";
 import { RecipeContext } from "../context/RecipeContext";
+import "../styles/savedPage.css";
 
 const SavedPage = () => {
   const { savedRecipes } = useContext(RecipeContext);

@@ -1,11 +1,9 @@
 import RecipeForm from "../components/RecipeForm";
+import "../styles/addPage.css";
 
 const AddPage = () => {
   return (
-    <div 
-      className="add-page" 
-      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}
-    >
+    <div className="add-page">
       <RecipeForm />
     </div>
   );
