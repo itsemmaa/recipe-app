@@ -29,16 +29,18 @@ const Search = () => {
         
         <div className="search-results-container">
           {expandedCard ? (
-            <RecipeCard 
-              image={recipes.find((recipe) => recipe.name === expandedCard).image}
-              name={expandedCard}
-              description={recipes.find((recipe) => recipe.name === expandedCard).description}
-              ingredients={recipes.find((recipe) => recipe.name === expandedCard).ingredients}
-              time={recipes.find((recipe) => recipe.name === expandedCard).time}
-              author={recipes.find((recipe) => recipe.name === expandedCard).author}
-              isExpanded={true}
-              toggleExpanded={() => toggleExpandedCard(null)}
-            />
+            <div className="expanded-card-wrapper">
+              <RecipeCard 
+                image={recipes.find((recipe) => recipe.name === expandedCard).image}
+                name={expandedCard}
+                description={recipes.find((recipe) => recipe.name === expandedCard).description}
+                ingredients={recipes.find((recipe) => recipe.name === expandedCard).ingredients}
+                time={recipes.find((recipe) => recipe.name === expandedCard).time}
+                author={recipes.find((recipe) => recipe.name === expandedCard).author}
+                isExpanded={true}
+                toggleExpanded={() => toggleExpandedCard(null)}
+              />
+            </div>
           ) : (
             <div className="search-results">
               {recipes.map((recipe, index) => (
