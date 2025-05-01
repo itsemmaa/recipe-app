@@ -32,7 +32,7 @@ const RecipeForm = () => {
     };
 
     return (
-        <div className="recipe-form-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', backgroundColor: '#f0f0f0' }}>
+        <div className="recipe-form-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', backgroundColor: 'transparent' }}>
             <div className="recipe-form" style={{ width: '100%', maxWidth: '500px', padding: '20px', border: '1px solid #ddd', borderRadius: '8px', backgroundColor: '#ffffff' }}>
                 <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#333' }}>Create a New Dish</h2>
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
@@ -87,11 +87,11 @@ const RecipeForm = () => {
                         }}
                     />
 
-                    <label htmlFor="instructions" style={{ color: '#555' }}>Instructions:</label>
+                    <label htmlFor="instructions" style={{ color: '#555' }}>Notes:</label>
                     <textarea 
                         id="instructions" 
                         name="instructions" 
-                        placeholder="Write the steps..." 
+                        placeholder="Write a description..." 
                         value={instructions}
                         onChange={(e) => setInstructions(e.target.value)}
                         required 
