@@ -9,6 +9,17 @@ const RecipeForm = () => {
     const [title, setTitle] = useState('');
     const [instructions, setInstructions] = useState('');
     const [image, setImage] = useState(null);
+    const [author, setAuthor] = useState('');
+    const [steps, setSteps] = useState(['']);
+
+    const handleStepChange = (idx, value) => {
+        const newSteps = [...steps];
+        newSteps[idx] = value;
+        setSteps(newSteps);
+    };
+
+    const addStepField = () => setSteps([...steps, '']);
+    const removeStepField = (idx) => setSteps(steps.filter((_, i) => i !== idx));
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,9 +30,11 @@ const RecipeForm = () => {
         const newRecipe = {
             name: title,
             description: instructions,
-            image: URL.createObjectURL(image), 
-            tags,
-            time,
+            image: URL.createObjectURL(image),
+            ingredients: tags.map(tag => typeof tag === 'string' ? tag : tag.value),
+            time: Number(time),
+            author,
+            steps: steps.filter(s => s.trim() !== ''),
         };
         addRecipe(newRecipe);
         setTitle('');
@@ -29,6 +42,8 @@ const RecipeForm = () => {
         setTags([]);
         setTime(0);
         setImage(null);
+        setAuthor('');
+        setSteps(['']);
     };
 
     return (
@@ -44,6 +59,18 @@ const RecipeForm = () => {
                         name="dish-name" 
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
+                        required 
+                        style={{ padding: '10px', borderRadius: '4px', border: '1px solid #ccc', backgroundColor: '#f9f9f9', color: '#333' }}
+                    />
+
+                    <label htmlFor="dish-author" style={{ color: '#555' }}>Author:</label>
+                    <input 
+                        placeholder="Author" 
+                        type="text" 
+                        id="dish-author" 
+                        name="dish-author" 
+                        value={author}
+                        onChange={(e) => setAuthor(e.target.value)}
                         required 
                         style={{ padding: '10px', borderRadius: '4px', border: '1px solid #ccc', backgroundColor: '#f9f9f9', color: '#333' }}
                     />
@@ -97,6 +124,24 @@ const RecipeForm = () => {
                         required 
                         style={{ padding: '10px', borderRadius: '4px', border: '1px solid #ccc', backgroundColor: '#f9f9f9', color: '#333', minHeight: '100px' }}
                     ></textarea>
+
+                    <label style={{ color: '#555' }}>Steps (one sentence each):</label>
+                    {steps.map((step, idx) => (
+                        <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <input
+                                type="text"
+                                value={step}
+                                onChange={e => handleStepChange(idx, e.target.value)}
+                                placeholder={`Step ${idx + 1}`}
+                                required
+                                style={{ flex: 1, padding: '8px', borderRadius: '4px', border: '1px solid #ccc', backgroundColor: '#f9f9f9' }}
+                            />
+                            {steps.length > 1 && (
+                                <button type="button" onClick={() => removeStepField(idx)} style={{ color: '#fff', background: '#ff0000', border: 'none', borderRadius: '4px', padding: '4px 8px', cursor: 'pointer' }}>Remove</button>
+                            )}
+                        </div>
+                    ))}
+                    <button type="button" onClick={addStepField} style={{ marginBottom: '10px', background: '#eee', border: 'none', borderRadius: '4px', padding: '6px 12px', cursor: 'pointer', color: '#333' }}>Add Step</button>
 
                     <button 
                         type="submit" 

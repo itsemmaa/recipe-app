@@ -14,16 +14,16 @@ export const RecipeProvider = ({ children }) => {
         {
             name: "Spaghetti Bolognese",
             description: "A classic Italian pasta dish with rich meat sauce.",
-            image: spaghettiImage, // Use imported image
-            time: 45,
-            ingredients: ["Spaghetti", "Ground Beef", "Tomato Sauce", "Onion", "Garlic", "Meat", "Pasta"],
-            author: "Chef Mario",
+            image: spaghettiImage,
+            time: 45, // Ensure time is defined
+            ingredients: ["Spaghetti", "Ground Beef", "Tomato Sauce", "Onion", "Garlic", "Meat", "Pasta"], // Ensure ingredients are defined
+            author: "Chef Mario", // Ensure author is defined
             dishType: "Lunch",
         },
         {
             name: "Chicken Curry",
             description: "A flavorful and spicy chicken curry.",
-            image: chickenCurryImage, // Use imported image
+            image: chickenCurryImage,
             time: 60,
             ingredients: ["Chicken", "Curry Powder", "Coconut Milk", "Onion", "Garlic", "Ginger", "Meat"],
             author: "Chef Priya",
@@ -33,7 +33,7 @@ export const RecipeProvider = ({ children }) => {
             name: "Caesar Salad",
             description: "A fresh and healthy Caesar salad.",
             image: caesarSaladImage, // Use imported image
-            time: 15,
+            time: 15, // Ensure time is defined
             ingredients: ["Romaine Lettuce", "Croutons", "Cheese", "Caesar Dressing"],
             author: "Chef Julia",
             dishType: "Appetizer",
@@ -42,7 +42,7 @@ export const RecipeProvider = ({ children }) => {
             name: "Lasagna",
             description: "A simple and classic italian dish.",
             image: lasagnaImage, // Use imported image
-            time: 90,
+            time: 90, // Ensure time is defined
             ingredients: ["Pasta", "Cheese", "Onion", "Meat", "Tomato Sauce"],
             author: "John Smith",
             dishType: "Dinner",
@@ -51,7 +51,7 @@ export const RecipeProvider = ({ children }) => {
             name: "Chicken Enchiladas",
             description: "The best mexican dish ever!",
             image: enchiladasImage, // Use imported image
-            time: 45,
+            time: 45, // Ensure time is defined
             ingredients: ["Chicken", "Tortillas", "Cheese", "Meat"],
             author: "John Jacob Jingleheimer Schmidt",
             dishType: "Dinner",
@@ -60,7 +60,7 @@ export const RecipeProvider = ({ children }) => {
             name: "Chocolate Cake",
             description: "Perfect for a birthday dessert.",
             image: cakeImage, // Use imported image
-            time: 60,
+            time: 60, // Ensure time is defined
             ingredients: ["Flour", "Eggs", "Cocoa Powder", "Sugar"],
             author: "John Smith",
             dishType: "Dessert",
@@ -97,7 +97,7 @@ export const RecipeProvider = ({ children }) => {
             if (prevSaved.some((r) => r.name === recipe.name)) {
                 return prevSaved.filter((r) => r.name !== recipe.name); 
             }
-            return [...prevSaved, recipe];
+            return [...prevSaved, recipe]; // Ensure the full recipe object, including details, is saved
         });
     };
 
