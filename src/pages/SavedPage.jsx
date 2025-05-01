@@ -16,16 +16,18 @@ const SavedPage = () => {
       <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Saved Recipes</h2>
       <div className="search-results-container">
         {expandedCard ? (
-          <RecipeCard 
-            image={savedRecipes.find((recipe) => recipe.name === expandedCard).image}
-            name={expandedCard}
-            description={savedRecipes.find((recipe) => recipe.name === expandedCard).description}
-            ingredients={savedRecipes.find((recipe) => recipe.name === expandedCard).ingredients}
-            time={savedRecipes.find((recipe) => recipe.name === expandedCard).time}
-            author={savedRecipes.find((recipe) => recipe.name === expandedCard).author}
-            isExpanded={true}
-            toggleExpanded={() => toggleExpandedCard(null)}
-          />
+          <div className="expanded-card-wrapper">
+            <RecipeCard 
+              image={savedRecipes.find((recipe) => recipe.name === expandedCard).image}
+              name={expandedCard}
+              description={savedRecipes.find((recipe) => recipe.name === expandedCard).description}
+              ingredients={savedRecipes.find((recipe) => recipe.name === expandedCard).ingredients}
+              time={savedRecipes.find((recipe) => recipe.name === expandedCard).time}
+              author={savedRecipes.find((recipe) => recipe.name === expandedCard).author}
+              isExpanded={true}
+              toggleExpanded={() => toggleExpandedCard(null)}
+            />
+          </div>
         ) : (
           <div className="search-results">
             {savedRecipes.length > 0 ? (

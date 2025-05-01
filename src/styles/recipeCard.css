@@ -14,11 +14,10 @@
 }
 
 .recipe-card.expanded {
-    width: 110%; /* Increase width to 90% of the container */
+    width: 100%; /* Increase width to 90% of the container */
     height: auto;
     background-color: inherit;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for emphasis */
-    transform: translateX(-100px); /* Move the card 100px to the left */
     cursor: default;
     padding: 20px;
     margin: 0 auto; /* Center the card horizontally */
