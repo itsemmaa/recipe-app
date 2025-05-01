@@ -8,12 +8,20 @@ You are also able to save recipes, and can view those saves in a separate page.
 Finally, you can upload your own recipes to expand the platform.
 
 ### Setup Instructions:
-
+You can clone the repository and run the app as follows:
+```
+git clone <https://github.com/itsemmaa/recipe-app.git>
+cd recipe-app
+npm install
+npm run dev
+```
 
 
 ### Team Roles:
-Mia Geoffray -
+*While all team members worked on all parts of the project, these were the main things everyone did*
 
-Jacob Eppert - 
+Mia Geoffray - Frontend and functionality
 
-Emma Barnett -
+Jacob Eppert - Backend and functionality
+
+Emma Barnett - Project setup and creating components
